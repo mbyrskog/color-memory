@@ -1,0 +1,25 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  width: 320px;
+  margin: 0 auto;
+}
+
+.gameOver {
+  margin-top: 12px;
+}
+
+.resetBtn {
+  padding: 0.6em 1.2em;
+  margin-top: 1rem;
+  border-radius: 8px;
+  background: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  cursor: pointer;
+  color: whitesmoke;
+}
+
+.resetBtn:hover {
+  background: #333;
+}
