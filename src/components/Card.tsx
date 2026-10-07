@@ -11,17 +11,20 @@ type Props = {
 export const Card = ({ card, disabled, isSelected, onClick }: Props) => {
   const faceUp = card.isFaceUp && !card.isMatched;
 
+  const className = [
+    "card",
+    isSelected && "selected",
+    card.isMatched && "matched",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   return (
     <button
-      className="card"
+      className={className}
       disabled={disabled || card.isMatched}
       onClick={() => onClick(card.id)}
-      style={{
-        outline: isSelected ? "3px solid #EDEDED" : "none",
-        backgroundColor: faceUp ? card.color : "#D6D6D666",
-        opacity: card.isMatched ? 0.15 : 1,
-        cursor: card.isMatched ? "default" : "pointer",
-      }}
+      style={faceUp ? { backgroundColor: card.color } : undefined}
     />
   );
 };
